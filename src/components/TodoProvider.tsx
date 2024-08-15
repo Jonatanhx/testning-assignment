@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useState } from "react";
 
-interface Todo {
+export interface Todo {
   title: string;
   description: string;
   date: string;
 }
 
-interface TodosContextType {
+export interface TodosContextType {
   todos: Todo[];
   addTodo: (newTodo: Todo) => void;
 }
