@@ -29,9 +29,9 @@ describe("AddTodoForm", () => {
   });
 
   it("Should call onSubmit with form data when submitted", () => {
-    const handleSubmitSpy = vi.fn();
+    const mockedHandledSubmit = vi.fn();
 
-    render(<AddTodoForm onSubmit={handleSubmitSpy} />);
+    render(<AddTodoForm onSubmit={mockedHandledSubmit} />);
 
     const titleInput = screen.getByPlaceholderText("Title");
     const descriptionInput = screen.getByPlaceholderText("Description");
@@ -46,8 +46,8 @@ describe("AddTodoForm", () => {
     const submitButton = screen.getByRole("button", { name: /add/i });
     fireEvent.click(submitButton);
 
-    expect(handleSubmitSpy).toHaveBeenCalledTimes(1);
-    expect(handleSubmitSpy).toHaveBeenCalledWith({
+    expect(mockedHandledSubmit).toHaveBeenCalledTimes(1);
+    expect(mockedHandledSubmit).toHaveBeenCalledWith({
       title: "Test Title",
       description: "Test Description",
       date: "2024-08-15",
@@ -76,10 +76,10 @@ describe("AddTodoForm", () => {
   });
 
   it("Should give warnings if a field is empty", () => {
-    const handleSubmit = vi.fn();
-    render(<AddTodoForm onSubmit={handleSubmit} />);
+    const mockedHandledSubmit = vi.fn();
+    render(<AddTodoForm onSubmit={mockedHandledSubmit} />);
     const submitButton = screen.getByRole("button", { name: /add/i });
     fireEvent.click(submitButton);
-    expect(handleSubmit).not.toHaveBeenCalled();
+    expect(mockedHandledSubmit).not.toHaveBeenCalled();
   });
 });
