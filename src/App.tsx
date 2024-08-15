@@ -1,6 +1,6 @@
 import Header from "./components/Header";
+import { TodosProvider } from "./components/TodoContext";
 import TodoList from "./components/TodoList";
-import { TodosProvider } from "./components/TodoProvider";
 
 function App() {
   return (

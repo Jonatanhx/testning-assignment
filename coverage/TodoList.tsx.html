@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for TodoProvider.tsx</title>
+    <title>Code coverage report for TodoList.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> TodoProvider.tsx</h1>
+        <h1><a href="index.html">All files</a> TodoList.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -94,65 +94,65 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createContext, ReactNode, useState } from "react";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import AddTodoForm from "./AddTodoForm";
+import { useTodos } from "./TodoContext";
 &nbsp;
-export interface Todo {
-  title: string;
-  description: string;
-  date: string;
-}
-&nbsp;
-export interface TodosContextType {
-  todos: Todo[];
-  addTodo: (newTodo: Todo) =&gt; void;
-}
-&nbsp;
-export const TodosContext = createContext&lt;TodosContextType | undefined&gt;(
-  undefined
-);
-&nbsp;
-export const TodosProvider = ({ children }: { children: ReactNode }) =&gt; {
-  const [todos, setTodos] = useState&lt;Todo[]&gt;([]);
-&nbsp;
-  const addTodo = (newTodo: Todo) =&gt; {
-    setTodos((prevTodos) =&gt; [...prevTodos, newTodo]);
-  };
+export default function TodoList() {
+  const { todos, addTodo } = useTodos();
 &nbsp;
   return (
-    &lt;TodosContext.Provider value={{ todos, addTodo }}&gt;
-      {children}
-    &lt;/TodosContext.Provider&gt;
+    &lt;section className="inline-flex flex-col"&gt;
+      &lt;AddTodoForm onSubmit={addTodo} /&gt;
+      &lt;ul className="inline-flex flex-col-reverse"&gt;
+        {todos.map((todo, index) =&gt; (
+          &lt;li
+            key={index}
+            className="border border-black inline-flex flex-col my-1 bg-white px-1"
+          &gt;
+            &lt;div className="flex flex-col"&gt;
+              &lt;div&gt;
+                &lt;p className="text-lg border-b border-neutral-400"&gt;
+                  {todo.title}
+                &lt;/p&gt;
+                &lt;p&gt;{todo.description}&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;p className="flex justify-end"&gt;{todo.date}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/section&gt;
   );
-};
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +160,7 @@ export const TodosProvider = ({ children }: { children: ReactNode }) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-15T19:18:59.804Z
+                at 2024-08-15T19:27:13.517Z
             </div>
         <script src="prettify.js"></script>
         <script>

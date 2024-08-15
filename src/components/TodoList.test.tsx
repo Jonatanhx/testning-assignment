@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { TodosProvider } from "./TodoContext";
 import TodoList from "./TodoList";
-import { TodosProvider } from "./TodoProvider";
 
 describe("TodoList", () => {
   it("Should render todo items visually", () => {
