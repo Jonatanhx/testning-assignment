@@ -1,10 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import TodoList from "./TodoList";
+import { TodosProvider } from "./TodoProvider";
 
 describe("TodoList", () => {
   it("Should render todo items visually", () => {
-    render(<TodoList />);
+    render(
+      <TodosProvider>
+        <TodoList />
+      </TodosProvider>
+    );
     const titleInput = screen.getByPlaceholderText("Title");
     const descriptionInput = screen.getByPlaceholderText("Description");
     const dateInput = screen.getByPlaceholderText("Date");
