@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723750033525" clover="3.2.0">
-  <project timestamp="1723750033525" name="All files">
-    <metrics statements="111" coveredstatements="111" conditionals="9" coveredconditionals="9" methods="8" coveredmethods="8" elements="128" coveredelements="128" complexity="0" loc="111" ncloc="111" packages="1" files="4" classes="4"/>
+<coverage generated="1723750071925" clover="3.2.0">
+  <project timestamp="1723750071925" name="All files">
+    <metrics statements="108" coveredstatements="108" conditionals="9" coveredconditionals="9" methods="8" coveredmethods="8" elements="125" coveredelements="125" complexity="0" loc="108" ncloc="108" packages="1" files="4" classes="4"/>
     <file name="AddTodoForm.tsx" path="D:\Code\skolprojekt\testning-assignment\src\components\AddTodoForm.tsx">
       <metrics statements="63" coveredstatements="63" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
@@ -82,26 +82,23 @@
       <line num="15" count="3" type="stmt"/>
     </file>
     <file name="TodoContext.tsx" path="D:\Code\skolprojekt\testning-assignment\src\components\TodoContext.tsx">
-      <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="23" count="6" type="stmt"/>
-      <line num="25" count="6" type="cond" truecount="1" falsecount="0"/>
-      <line num="26" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="27" count="3" type="stmt"/>
-      <line num="29" count="6" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="21" count="6" type="cond" truecount="1" falsecount="0"/>
+      <line num="22" count="3" type="cond" truecount="1" falsecount="0"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="25" count="6" type="stmt"/>
+      <line num="26" count="6" type="stmt"/>
+      <line num="27" count="6" type="stmt"/>
       <line num="30" count="6" type="stmt"/>
-      <line num="31" count="6" type="stmt"/>
+      <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="33" count="6" type="stmt"/>
       <line num="34" count="6" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="38" count="6" type="stmt"/>
-      <line num="39" count="6" type="stmt"/>
-      <line num="40" count="6" type="stmt"/>
+      <line num="35" count="6" type="stmt"/>
     </file>
     <file name="TodoList.tsx" path="D:\Code\skolprojekt\testning-assignment\src\components\TodoList.tsx">
       <metrics statements="19" coveredstatements="19" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
