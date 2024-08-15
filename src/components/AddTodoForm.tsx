@@ -36,7 +36,7 @@ export default function AddTodoForm({ onSubmit }: AddTodoFormProps) {
 
   return (
     <form
-      className="border border-black inline-flex flex-col bg-neutral-300 p-2"
+      className="border border-black inline-flex flex-col bg-neutral-300 p-2 mt-2"
       onSubmit={handleSubmit}
     >
       <label className="mb-4">

@@ -1,22 +1,12 @@
-import { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
-
-interface Todo {
-  title: string;
-  description: string;
-  date: string;
-}
+import { useTodos } from "./UseTodoHook";
 
 export default function TodoList() {
-  const [todos, setTodos] = useState<Todo[]>([]);
-
-  const handleAddTodo = (newTodo: Todo) => {
-    setTodos([...todos, newTodo]);
-  };
+  const { todos, addTodo } = useTodos();
 
   return (
     <section className="inline-flex flex-col">
-      <AddTodoForm onSubmit={handleAddTodo} />
+      <AddTodoForm onSubmit={addTodo} />
       <ul className="inline-flex flex-col-reverse">
         {todos.map((todo, index) => (
           <li
