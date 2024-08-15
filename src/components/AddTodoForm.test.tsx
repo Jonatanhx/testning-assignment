@@ -29,8 +29,7 @@ describe("AddTodoForm", () => {
   });
 
   it("Should call onSubmit with form data when submitted", () => {
-    const handleSubmit = vi.fn();
-    render(<AddTodoForm onSubmit={handleSubmit} />);
+    render(<AddTodoForm onSubmit={vi.fn()} />);
 
     const titleInput = screen.getByPlaceholderText("Title");
     const descriptionInput = screen.getByPlaceholderText("Description");
@@ -45,8 +44,8 @@ describe("AddTodoForm", () => {
     const submitButton = screen.getByRole("button", { name: /add/i });
     fireEvent.click(submitButton);
 
-    expect(handleSubmit).toHaveBeenCalledTimes(1);
-    expect(handleSubmit).toHaveBeenCalledWith({
+    expect(vi.fn()).toHaveBeenCalledTimes(1);
+    expect(vi.fn()).toHaveBeenCalledWith({
       title: "Test Title",
       description: "Test Description",
       date: "2024-08-15",
@@ -54,8 +53,7 @@ describe("AddTodoForm", () => {
   });
 
   it("Should reset form fields after submission", () => {
-    const handleSubmit = vi.fn();
-    render(<AddTodoForm onSubmit={handleSubmit} />);
+    render(<AddTodoForm onSubmit={vi.fn()} />);
 
     const titleInput = screen.getByPlaceholderText("Title");
     const descriptionInput = screen.getByPlaceholderText("Description");
@@ -73,5 +71,9 @@ describe("AddTodoForm", () => {
     expect(titleInput).toHaveValue("");
     expect(descriptionInput).toHaveValue("");
     expect(dateInput).toHaveValue("");
+  });
+
+  it("Shoud not be able to create an empty to do post", () => {
+    render(<AddTodoForm onSubmit={vi.fn()} />);
   });
 });
