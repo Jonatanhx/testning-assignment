@@ -47,6 +47,7 @@ export default function AddTodoForm({ onSubmit }: AddTodoFormProps) {
       </label>
       <input
         placeholder="Title"
+        required
         type="text"
         name="title"
         className="border-b border-black"
@@ -57,6 +58,7 @@ export default function AddTodoForm({ onSubmit }: AddTodoFormProps) {
         <h2>Description:</h2>
       </label>
       <input
+        required
         className="border-b border-black"
         type="text"
         placeholder="Description"
@@ -68,6 +70,7 @@ export default function AddTodoForm({ onSubmit }: AddTodoFormProps) {
         <h2>Date:</h2>
       </label>
       <input
+        required
         placeholder="Date"
         className="border-b border-black"
         type="date"
