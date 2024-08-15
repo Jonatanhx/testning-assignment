@@ -31,5 +31,8 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
 
 export const useTodos = () => {
   const context = useContext(TodosContext);
+  if (!context) {
+    throw new Error("useTodos requires parent being wrapped by TodosProvider");
+  }
   return context;
 };
