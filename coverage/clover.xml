@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723785653566" clover="3.2.0">
-  <project timestamp="1723785653566" name="All files">
+<coverage generated="1723788476608" clover="3.2.0">
+  <project timestamp="1723788476608" name="All files">
     <metrics statements="111" coveredstatements="111" conditionals="11" coveredconditionals="11" methods="8" coveredmethods="8" elements="130" coveredelements="130" complexity="0" loc="111" ncloc="111" packages="1" files="4" classes="4"/>
     <file name="AddTodoForm.tsx" path="D:\Code\skolprojekt\testning-assignment\src\components\AddTodoForm.tsx">
       <metrics statements="63" coveredstatements="63" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
@@ -97,9 +97,9 @@
       <line num="30" count="7" type="stmt"/>
       <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
       <line num="33" count="12" type="stmt"/>
-      <line num="34" count="12" type="cond" truecount="1" falsecount="0"/>
+      <line num="34" count="12" type="cond" truecount="2" falsecount="0"/>
       <line num="35" count="4" type="stmt"/>
-      <line num="36" count="4" type="cond" truecount="1" falsecount="0"/>
+      <line num="36" count="4" type="stmt"/>
       <line num="37" count="7" type="stmt"/>
       <line num="38" count="7" type="stmt"/>
     </file>
